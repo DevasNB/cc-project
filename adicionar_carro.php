@@ -1,3 +1,12 @@
+<?php
+session_start(); 
+
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+    header("Location: login.php");
+    exit; 
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -36,7 +45,7 @@
             <div class="form-container">
                 <form method="POST" action="queries/cars/insert_car.php">
                     <div class="form-group">
-                        <label for="model">Nodelo de carro</label>
+                        <label for="model">Modelo de carro</label>
                         <input type="text" class="form-control" name="model" required>
                     </div>
                     <div class="form-group mt-2">

@@ -50,7 +50,7 @@
               </div>
               <div class="col-4">
                 <div class="card">
-                  <a href="carros.php">
+                  <a href="perfil.php">
                     <div class="card-body">
                       <h5 class="card-title">Perfil</h5>
                       <p class="card-text">Verfica aqui os teus dados de utilizador</p>
