@@ -11,7 +11,7 @@
 <body class="body-login">
     <div class="login-container">
         <h2 class="text-center">Registo</h2>
-        <form method="POST" action="queries/users/new_user.php">
+        <form method="POST" action="queries/users/insert_user.php">
             <div class="form-group">
                 <label for="username">Nome de utilizador</label>
                 <input type="text" class="form-control" name="username" required>
