@@ -56,6 +56,7 @@
           <h1 class="mt-5">Os meus alugueres</h1>
           <p>Aqui é possivel visualizar os alugueres feitos</p>
         </div>
+        <a href="adicionar_aluguer.php" class="btn btn-primary my-2">Novo aluguer</a>
         <div class="row">
           <?php foreach($rentals as $rental): ?>
             <div class="col-md-4">
@@ -66,7 +67,7 @@
                         <p class="card-text"><?= $rental['date_end'] ?></p>
                         <p class="card-text"><?= $rental['kilo_meters'] ?> km</p>
                         <p class="card-text"><?= $rental['username'] ?></p>
-                        <a href="editar_carro.php?id=<?= $rental['id'] ?>" class="btn btn-warning my-2"><i class="bi bi-pencil-fill"></i></a>
+                        <a href="editar_aluguer.php?id=<?= $rental['id'] ?>" class="btn btn-warning my-2"><i class="bi bi-pencil-fill"></i></a>
                         <a href="" type="button" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-danger my-2"><i class="bi bi-trash-fill"></i></a>
                     </div>
                 </div>
