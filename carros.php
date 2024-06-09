@@ -58,7 +58,7 @@
                     <h5 class="card-title"><?= $car['model'] ?></h5>
                     <p class="card-text"><?= $car['brand'] ?></p>
                     <p class="card-text"><?= $car['year'] ?></p>
-                    <a href="editar_carro.php?<?= $car['id'] ?>" class="btn btn-warning my-2"><i class="bi bi-pencil-fill"></i></a>
+                    <a href="editar_carro.php?id=<?= $car['id'] ?>" class="btn btn-warning my-2"><i class="bi bi-pencil-fill"></i></a>
                     <a href="" type="button" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-danger my-2"><i class="bi bi-trash-fill"></i></a>
                   </div>
                 </div>

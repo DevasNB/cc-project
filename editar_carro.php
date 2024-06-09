@@ -58,7 +58,6 @@
         <div class="col-12">
             <div class="form-container">
                 <form method="POST" action="queries/cars/update_car.php">
-                    <!-- Se $car estiver definido, exibir os campos do formulário preenchidos com os dados do carro -->
                     <?php if(isset($car)) { ?>
                         <div class="form-group">
                             <label for="model">Modelo de carro</label>
