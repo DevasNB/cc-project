@@ -40,7 +40,7 @@
               </div>
               <div class="col-4">
                 <div class="card">
-                  <a href="carros.php">
+                  <a href="aluguer.php">
                     <div class="card-body">
                       <h5 class="card-title">Alugar Carro</h5>
                       <p class="card-text">Clica aqui para alugares se já tens ideia do carro que queres alugar!</p>

@@ -1,6 +1,11 @@
 <?php
     include 'connection/connection.php';
 
+    if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+        header("Location: login.php");
+        exit; 
+    }
+
     if(isset($_GET["id"])) {
         $id = $_GET["id"];
 
