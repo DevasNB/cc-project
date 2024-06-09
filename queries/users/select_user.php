@@ -10,4 +10,5 @@
     $conn->close();
 
     header("location: ../index.php");
+    //Bom dia
 ?>
