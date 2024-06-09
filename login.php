@@ -13,12 +13,12 @@
         <h2 class="text-center">Login</h2>
         <form method="POST" action="queries/users/select_user.php">
             <div class="form-group">
-                <label for="user">Nome de utilizador</label>
-                <input type="text" class="form-control" id="user" required>
+                <label for="username">Nome de utilizador</label>
+                <input type="text" class="form-control" name="username" required>
             </div>
             <div class="form-group mt-2">
                 <label for="password">Palavra-passe</label>
-                <input type="password" class="form-control" id="password" required>
+                <input type="password" class="form-control" name="password" required>
             </div>
             <button type="submit" class="btn btn-primary btn-block mt-2">Login</button>
             <a href="registo.php" class="btn btn-secondary btn-block mt-2">Registo</a>
