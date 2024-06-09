@@ -11,7 +11,7 @@
 <body class="body-login">
     <div class="login-container">
         <h2 class="text-center">Login</h2>
-        <form method="POST" action="querys/new_user.php">
+        <form method="POST" action="queries/users/select_user.php">
             <div class="form-group">
                 <label for="user">Nome de utilizador</label>
                 <input type="text" class="form-control" id="user" required>
