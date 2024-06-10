@@ -93,7 +93,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <form action="queries/cars/delete_rental.php" method="post">
+                <form action="queries/rental/delete_rental.php" method="post">
                   <input type="hidden" name="id" value="<?= $rental['id'] ?>">
                   <button type="submit" class="btn btn-danger">Eliminar</button>
                 </form>

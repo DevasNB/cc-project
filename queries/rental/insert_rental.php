@@ -6,14 +6,14 @@
         exit;
     }
 
-    $id_uti = 1;
+    $id_uti = 3;
 
     $date_start = $_POST["date_start"];
     $date_end = $_POST["date_end"];
     $kilo_meters = $_POST["kilo_meters"];
     $id_car = $_POST["id_car"];
 
-    $stmt = $conn->prepare("INSERT INTO carros.rental (date_start, date_end, kilo_meters, id_car, id_uti) VALUES (?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO rental (date_start, date_end, kilo_meters, id_car, id_uti) VALUES (?, ?, ?, ?, ?)");
     $stmt->bind_param("ssiis", $date_start, $date_end, $kilo_meters, $id_car, $id_uti);
 
     if ($stmt->execute()) {
