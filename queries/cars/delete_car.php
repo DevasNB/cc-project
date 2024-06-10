@@ -5,8 +5,10 @@
         header("Location: login.php");
         exit; 
     }
+
+    $id = $_POST["id"];
     
-    $sql = "DELETE FROM cars WHERE id='$id'";
+    $sql = "DELETE FROM carros.cars WHERE id='$id'";
 
     $conn->query($sql);
     $conn->close();

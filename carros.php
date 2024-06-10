@@ -1,17 +1,16 @@
 <?php 
     include 'connection/connection.php';
 
-    $sql = "SELECT * FROM cars";
+    $sql = "SELECT * FROM carros.cars";
     $result = $conn->query($sql);
 
     $cars = [];
 
-    /*if($result->num_rows > 0) {
+    if($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             $cars[] = $row;
         }
-    }*/
-
+    }
 
     $conn->close();
 ?>
@@ -60,7 +59,7 @@
                     <p class="card-text"><?= $car['brand'] ?></p>
                     <p class="card-text"><?= $car['year'] ?></p>
                     <a href="editar_carro.php?id=<?= $car['id'] ?>" class="btn btn-warning my-2"><i class="bi bi-pencil-fill"></i></a>
-                    <a href="" type="button" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-danger my-2"><i class="bi bi-trash-fill"></i></a>
+                    <a href="#" type="button" data-bs-toggle="modal" data-bs-target="#myModal<?= $car['id'] ?>" class="btn btn-danger my-2"><i class="bi bi-trash-fill"></i></a>
                   </div>
                 </div>
                 
@@ -71,23 +70,28 @@
 
 
       <!-- modal -->
-      <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen-sm-down">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Eliminar Carro</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <p>Pretendes mesmo eliminar este carro? Não existe forma de o recuperar depois disso.</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn btn-danger">Eliminar</button>
+      <?php foreach($cars as $car): ?>
+        <div class="modal fade" id="myModal<?= $car['id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-fullscreen-sm-down">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Eliminar Carro</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p>Pretendes mesmo eliminar este carro? Não existe forma de o recuperar depois disso.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <form action="queries/cars/delete_car.php" method="post">
+                  <input type="hidden" name="id" value="<?= $car['id'] ?>">
+                  <button type="submit" class="btn btn-danger">Eliminar</button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      <?php endforeach; ?>
       
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

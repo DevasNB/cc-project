@@ -9,7 +9,7 @@
     if(isset($_GET["id"])) {
         $id = $_GET["id"];
 
-        $sql = "SELECT * FROM cars WHERE id='$id'";
+        $sql = "SELECT * FROM carros.cars WHERE id='$id'";
         
         $result = $conn->query($sql);
 

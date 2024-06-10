@@ -6,7 +6,7 @@
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    $sql = "SELECT id FROM users WHERE username='".$username."' and password='".$password."'" ;
+    $sql = "SELECT id FROM carros.users WHERE username='".$username."' and password='".$password."'" ;
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {

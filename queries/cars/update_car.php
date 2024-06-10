@@ -6,7 +6,7 @@
     $brand = $_POST["brand"];
     $year = $_POST["year"];
 
-    $sql = "UPDATE cars SET model='$model', brand='$brand', year='$year' WHERE id='$id'";
+    $sql = "UPDATE carros.cars SET model='$model', brand='$brand', year='$year' WHERE id='$id'";
 
     if ($conn->query($sql) === TRUE) {
         echo "Registro atualizado com sucesso";

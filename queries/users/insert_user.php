@@ -4,7 +4,7 @@
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    $sql = "INSERT into users (username, password, id_type) values ('$username', '$password', '2')";
+    $sql = "INSERT into carros.users (username, password, id_type) values ('$username', '$password', '2')";
 
     $conn->query($sql);
     $conn->close();
