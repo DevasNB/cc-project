@@ -2,7 +2,7 @@
 session_start();
 
 $servername = "10.0.1.4";
-$database = "mysql";
+$database = "carros";
 $username = "CCPDBUser";
 $password = "CCPDBPassword";
 
