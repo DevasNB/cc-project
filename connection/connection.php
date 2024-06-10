@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "carros";
+$servername = "10.0.1.4";
+$database = "mysql";
+$username = "CCPDBUser";
+$password = "CCPDBPassword";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
