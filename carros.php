@@ -12,7 +12,6 @@
         }
     }
 
-    echo mysqli_error($con);
 
     $conn->close();
 ?>
