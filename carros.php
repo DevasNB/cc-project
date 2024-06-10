@@ -2,8 +2,7 @@
 include 'connection/connection.php';
 
 $sql = "SELECT * FROM cars";
-
-$result = mysqli_query($conn, $sql);
+$result = $conn->query($sql);
 
 $cars = [];
 
@@ -14,7 +13,7 @@ if ($result->num_rows > 0) {
 }
 
 
-mysqli_close($conn);
+$conn->close();
 ?>
 
 <!DOCTYPE html>
