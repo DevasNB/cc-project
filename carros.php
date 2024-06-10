@@ -1,5 +1,5 @@
 <?php
-/*include 'connection/connection.php';
+include 'connection/connection.php';
 
 $sql = "SELECT * FROM cars";
 $result = $conn->query($sql);
@@ -10,31 +10,8 @@ if ($result->num_rows > 0) {
 	while ($row = $result->fetch_assoc()) {
 		$cars[] = $row;
 	}
-}*/
-
-$servername = "10.0.1.4";
-$database = "carros";
-$username = "CCPDBUser";
-$password = "CCPDBPassword";
-$charset="utf8mb4";
-$dsn="mysql:host=$servername;dbname=$database;$charset=$charset";
-$options=[
-  PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC,
-  PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION,
-  PDO::ATTR_EMULATE_PREPARES=>false
-
-];
-try{
-    $pdo = new PDO($dsn,$username,$password,$options);
-}catch(\PDOException $e){
-    echo $e->getMessage();
 }
 
-$sql ='select * from carros ';
-
-$data =[];
- $cars = $pdo->query($sql)->fetchAll();
- $count_all_rows = $pdo->query($sql)->rowCount();
 
 $conn->close();
 ?>
