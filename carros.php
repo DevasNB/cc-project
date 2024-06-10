@@ -11,13 +11,15 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 $sql = "SELECT * FROM cars";
 $result = $conn->query($sql);
 
+echo $result;
+/*
 $cars = [];
 
 if ($result->num_rows > 0) {
 	while ($row = $result->fetch_assoc()) {
 		$cars[] = $row;
 	}
-}
+}*/
 
 
 $conn->close();
