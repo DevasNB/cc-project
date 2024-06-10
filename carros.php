@@ -1,18 +1,9 @@
 <?php
-//include 'connection/connection.php';
+include 'connection/connection.php';
 
-$servername = "10.0.1.4";
-$database = "carros";
-$username = "CCPDBUser";
-$password = "CCPDBPassword";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-$sql = "SELECT * FROM cars";
+/*$sql = "SELECT * FROM cars";
 $result = $conn->query($sql);
 
-echo $result;
-/*
 $cars = [];
 
 if ($result->num_rows > 0) {
