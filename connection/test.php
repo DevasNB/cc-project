@@ -1,6 +1,6 @@
 <?php
 $servername = "10.0.1.4";
-$database = "carros2";
+$database = "carros";
 $username = "CCPDBUser";
 $password = "CCPDBPassword";
 // Create connection
