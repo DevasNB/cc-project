@@ -1,7 +1,7 @@
 <?php
 include 'connection/connection.php';
 
-$sql = "SELECT * FROM cars";
+$sql = "SELECT * FROM carros.cars";
 $result = $conn->query($sql);
 
 $cars = [];
