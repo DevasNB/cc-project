@@ -1,25 +1,40 @@
-After creating WebServer VM
-cd /var/www/html
-git clone https://github.com/DevasNB/cc-project.git ccproject
+WebServer
+
+sudo apt-get update; 
+
+sudo apt-get install apache2 -y; 
+sudo apt-get install php -y; 
+sudo apt-get install php-mysqli -y;
+sudo apt-get install libapache2-mod-php -y;
+
+sudo systemctl restart apache2;
+
+sudo apt install mysql-client-core-8.0 -y; 
+
+cd /var/www/html;
+
+sudo apt install git;
+sudo git clone https://github.com/DevasNB/cc-project.git ccproject;
+
 (to pull:
 sudo rm -r ccproject
 and git clone again
 )
 
-After creating SQLServer VM
+ssh CCPSQLAdmin@10.0.1.4
 
-sudo apt-get update
-sudo apt-get install mysql-server
-sudo systemctl start mysql.service~
+SQLServer:
 
-sudo sed -i "s/.*bind-address.*/bind-address = 0.0.0.0/" /etc/mysql/mysql.conf.d/mysqld.cnf
+sudo apt-get update;
+sudo apt-get install mysql-server -y;
+sudo systemctl start mysql.service;
+sudo sed -i 's/.*bind-address.*/bind-address = 0.0.0.0/' /etc/mysql/mysql.conf.d/mysqld.cnf;
+sudo mysql --execute "CREATE USER CCPDBUser@'%' IDENTIFIED BY 'CCPDBPassword';\"; sudo mysql --execute \"GRANT ALL PRIVILEGES ON * . * TO CCPDBUser@'%';"; 
+sudo mysql --execute "FLUSH PRIVILEGES;";
+sudo service mysql stop;
+sudo service mysql start;
 
-DB_PASSWORD="CCPDBPassword"
-DB_USER="CCPDBUser"
+exit
 
-sudo mysql --execute "CREATE USER $DB_USER@'%' IDENTIFIED BY '$DB_PASSWORD';"
-sudo mysql --execute "GRANT ALL PRIVILEGES ON * . * TO $DB_USER@'%';"
-sudo mysql --execute "FLUSH PRIVILEGES;"
-
-sudo service mysql stop
-sudo service mysql start
+WebServer
+mysql -h 10.0.1.4 -u CCPDBUser -pCCPDBPassword -P 3306 mysql < ccproject/carros2.sql;
