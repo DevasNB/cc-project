@@ -26,6 +26,19 @@ $conn->close();
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 	<link href="css/style.css" rel="stylesheet">
+
+  <style>
+    .card {
+            border-radius: 10px;
+            border: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+  </style>
 </head>
 
 <body>
@@ -54,7 +67,7 @@ $conn->close();
         <div class="row">
           <?php foreach($cars as $car): ?>
             <div class="col-md-4">
-              <div class="card mb-4" style="width: 18rem;">
+              <div class="card mb-4">
                   <img src="" class="card-img-top" alt="<?= $car['model'] ?>">
                   <div class="card-body">
                     <h5 class="card-title"><?= $car['model'] ?></h5>

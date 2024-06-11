@@ -10,6 +10,9 @@
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
+
+        $row = $result->fetch_assoc();
+        
         $_SESSION['logged_in'] = true;
         $_SESSION['user_id'] = $row['id'];
         
